@@ -1,14 +1,15 @@
 """
-A Fun Widget Class For Playing With Prime, Perfect and Fibonacci Numbers
-
+This is an adaptation and annotated version of code originally found here:
+http://code.activestate.com/recipes/577229-prime-perfect-and-fibonacci-number-widget-class/
 """
 
 class PrimePerFib:
-    
+    """Generate and manipulate Prime, Perfect and Fibonacci Numbers"""
     def __init__(self):
         pass
-  
+
     def gen_factor(self, n):
+        """Generate all the factors of a number"""
         l1, l2 = [], []
         for i in range(1, int(n ** 0.5) + 1):
             q,r = n//i, n%i
@@ -27,11 +28,13 @@ class PrimePerFib:
                 return False
         return True
 
-    """
-    A Hybrid Sieve of Atkin, without all the quadratics and keeping of sequences
-    allows for generating blocks of primes
-    """
     def prime_gen(self, count, start):
+        """Generate a sequence of prime numbers
+
+        Arguments:
+            count: The number of prime numbers to generate
+            start: The start of the sequence
+        """
         c     = 0
         base  = [2,3,5]
         start = int(round(start))
@@ -53,10 +56,12 @@ class PrimePerFib:
             n += 2
 
     def prime_get(self, num):
+        """Get the next prime number starting at and incluing the input value"""
         r = self.prime_gen(count=1,start=num).next()
         return r
-    
+
     def is_prime(self, num):
+        """Check if the input value is prime"""
         return self.prime_get(num)==num
 
     def prime_next(self, num):
@@ -64,6 +69,12 @@ class PrimePerFib:
         return self.prime_get(num+1)
 
     def perfect_gen(self, count, start=0):
+        """Generate a sequence of perfect numbers
+
+        Arguments:
+            count: The number of perfect numbers to generate
+            start: The start of the sequence, defaults to 0
+        """
         output = 0
         prime  = 0 
         while output < count:
@@ -79,15 +90,24 @@ class PrimePerFib:
                 yield pN
                     
     def perfect_get(self, num):
+        """Get the next perfect number starting at and incluing the input value"""
         return self.perfect_gen(count=1,start=num).next()
-    
+
     def is_perfect(self, num):
+        """Check if the input value is a perfect number"""
         return self.perfect_get(num)==num
 
     def perfect_next(self, num):
+        """Get the next perfect number starting at and not incluing the input value"""
         return self.perfect_get(num+1)
 
     def fibonacci_gen(self, count, start=0):
+        """Generate a sequence of fibonacci numbers
+
+        Arguments:
+            count: The number of fibonacci numbers to generate
+            start: The start of the sequence, defaults to 0
+        """
         output = 0
         fib    = [0,1]
         while output < count:
@@ -99,12 +119,15 @@ class PrimePerFib:
                 yield fN
 
     def fibonacci_get(self, num):
+        """Get the next fibonacci number starting at and incluing the input value"""
         return self.fibonacci_gen(count=1,start=num).next()
 
     def is_fibonacci(self, num):
+        """Check if the input value is a fibonacci number"""
         return self.fibonacci_get(num)==num
 
     def fibonacci_next(self, num):
+        """Get the next fibonacci number starting at and not incluing the input value"""
         return self.fibonacci_get(num+1)
 
 if __name__ == '__main__':
