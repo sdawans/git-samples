@@ -58,7 +58,7 @@ class PrimePerFib:
     
     
     def is_prime(self, num):
-        return (False,True)[self.prime_get(num)==num]
+        return self.prime_get(num)==num
     
     def prime_next(self, num):
         return (self.prime_get(num),self.prime_get(num+1))[self.is_prime(num)]
@@ -82,7 +82,7 @@ class PrimePerFib:
         return self.perfect_gen(1,num).next()
     
     def is_perfect(self, num):
-        return (False,True)[self.perfect_get(num)==num]
+        return self.perfect_get(num)==num
     
     def perfect_next(self, num):
         return (self.perfect_get(num),self.perfect_get(num+1))[self.is_perfect(num)]
@@ -102,7 +102,7 @@ class PrimePerFib:
         return self.fibonacci_gen(1,num).next()
 
     def is_fibonacci(self, num):
-        return (False,True)[self.fibonacci_get(num)==num]
+        return self.fibonacci_get(num)==num
     
     def fibonacci_next(self, num):
         return (self.fibonacci_get(num),self.fibonacci_get(num+1))[self.is_fibonacci(num)]
