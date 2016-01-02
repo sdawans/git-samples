@@ -51,16 +51,17 @@ class PrimePerFib:
                         c += 1
                         yield n
             n += 2
-                    
+
     def prime_get(self, num):
         r = self.prime_gen(count=1,start=num).next()
         return r
     
     def is_prime(self, num):
         return self.prime_get(num)==num
-    
+
     def prime_next(self, num):
-        return (self.prime_get(num),self.prime_get(num+1))[self.is_prime(num)]
+        """Get the next prime number starting at and not incluing the input value"""
+        return self.prime_get(num+1)
 
     def perfect_gen(self, count, start=0):
         output = 0
@@ -82,10 +83,10 @@ class PrimePerFib:
     
     def is_perfect(self, num):
         return self.perfect_get(num)==num
-    
+
     def perfect_next(self, num):
-        return (self.perfect_get(num),self.perfect_get(num+1))[self.is_perfect(num)]
-    
+        return self.perfect_get(num+1)
+
     def fibonacci_gen(self, count, start=0):
         output = 0
         fib    = [0,1]
@@ -96,15 +97,15 @@ class PrimePerFib:
             if fN >= start:
                 output += 1
                 yield fN
-        
+
     def fibonacci_get(self, num):
         return self.fibonacci_gen(count=1,start=num).next()
 
     def is_fibonacci(self, num):
         return self.fibonacci_get(num)==num
-    
+
     def fibonacci_next(self, num):
-        return (self.fibonacci_get(num),self.fibonacci_get(num+1))[self.is_fibonacci(num)]
+        return self.fibonacci_get(num+1)
 
 if __name__ == '__main__':
     
