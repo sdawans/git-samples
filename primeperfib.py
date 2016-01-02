@@ -22,7 +22,7 @@ class PrimePerFib:
         for prime in (l1 + l2):
             yield prime
             
-    def prime_factor(self, n):
+    def is_prime(self, n):
         for x in self.gen_factor(n):
             if x != 1 and x != n:
                 return False
@@ -50,7 +50,7 @@ class PrimePerFib:
                 
             if not [m for m in base if (n%60) % m == 0 ]:
                 if n % n**0.5 != 0:
-                    if self.prime_factor(n):
+                    if self.is_prime(n):
                         c += 1
                         yield n
             n += 2
@@ -59,10 +59,6 @@ class PrimePerFib:
         """Get the next prime number starting at and incluing the input value"""
         r = self.prime_gen(count=1,start=num).next()
         return r
-
-    def is_prime(self, num):
-        """Check if the input value is prime"""
-        return self.prime_get(num)==num
 
     def prime_next(self, num):
         """Get the next prime number starting at and not incluing the input value"""
