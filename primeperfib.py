@@ -8,22 +8,21 @@ class PrimePerFib:
     def __init__(self):
         pass
   
-    def factor(self, n):
-        yield 1
-        i = 2
-        limit = n**0.5
-        while i <= limit:
-            if n % i == 0:
-                yield i
-                n = n / i
-                limit = n**0.5
-            else:
-                i += 1
-        if n > 1:
-            yield n
+    def gen_factor(self, n):
+        l1, l2 = [], []
+        for i in range(1, int(n ** 0.5) + 1):
+            q,r = n//i, n%i
+            if r == 0:
+                l1.append(i)
+                l2.append(q)
+        if l1[-1] == l2[-1]:
+            l1.pop()
+        l2.reverse()
+        for prime in (l1 + l2):
+            yield prime
             
     def prime_factor(self, n):
-        for x in self.factor(n):
+        for x in self.gen_factor(n):
             if x != 1 and x != n:
                 return False
         return True
