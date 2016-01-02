@@ -53,9 +53,8 @@ class PrimePerFib:
             n += 2
                     
     def prime_get(self, num):
-        r = self.prime_gen(1,num).next()
+        r = self.prime_gen(count=1,start=num).next()
         return r
-    
     
     def is_prime(self, num):
         return self.prime_get(num)==num
@@ -79,7 +78,7 @@ class PrimePerFib:
                 yield pN
                     
     def perfect_get(self, num):
-        return self.perfect_gen(1,num).next()
+        return self.perfect_gen(count=1,start=num).next()
     
     def is_perfect(self, num):
         return self.perfect_get(num)==num
@@ -99,7 +98,7 @@ class PrimePerFib:
                 yield fN
         
     def fibonacci_get(self, num):
-        return self.fibonacci_gen(1,num).next()
+        return self.fibonacci_gen(count=1,start=num).next()
 
     def is_fibonacci(self, num):
         return self.fibonacci_get(num)==num
@@ -118,7 +117,7 @@ if __name__ == '__main__':
     print "Is 333 A Prime Number? ",PPF.is_prime(333)
 
     Primes = []
-    for Prime in PPF.prime_gen(10,42):
+    for Prime in PPF.prime_gen(count=10,start=42):
         Primes.append(Prime)
         
     print "Generated Primes: ",Primes,"\n\n"
@@ -131,7 +130,7 @@ if __name__ == '__main__':
     print "Is 8128 A Perfect Number ",PPF.is_perfect(8128)
     
     Perfects = []
-    for Perfect in PPF.perfect_gen(8, 0):
+    for Perfect in PPF.perfect_gen(count=8, start=0):
         Perfects.append(Perfect)
         
     print "Generated Perfect Numbers ",Perfects,"\n\n"
@@ -143,7 +142,7 @@ if __name__ == '__main__':
     print "Is 16 A Fibonacci Number? ",PPF.is_fibonacci(16)
     
     Fibonaccis = []
-    for Fibonacci in PPF.fibonacci_gen(42, 10):
+    for Fibonacci in PPF.fibonacci_gen(count=42, start=10):
         Fibonaccis.append(Fibonacci)
         
     print "Generated Fibonacci Numbers ",Fibonaccis
