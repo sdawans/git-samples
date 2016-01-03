@@ -1,6 +1,7 @@
 import argparse
 
 class CashRegister():
+    """A Cash Register to Add/Remove money and compute change"""
     def __init__(self):
         self.denominations = [
                         {'value':0.01, 'type': 'coin', 'name': 'One cent'},
@@ -30,13 +31,16 @@ class CashRegister():
         self._balance = value
 
     def add_amount(self, amount):
+        """Add money to the cash register"""
         self.balance += amount
 
     def remove_amount(self, amount):
+        """Remove money from the cash register"""
         self.balance -= amount
 
-    def compute_change(self, total, paid):
-        change_value = paid - total
+    def compute_change(self, due, paid):
+        """Return a dictionary of denominations representing the change based on amounts due and paid"""
+        change_value = paid - due
         denominations = self.denominations[:]
         change = []
         while denominations:
