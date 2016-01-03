@@ -1,6 +1,4 @@
 import argparse
-import pprint
-
 
 class CashRegister():
     def __init__(self):
