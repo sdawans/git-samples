@@ -12,3 +12,6 @@ pprint.pprint(change)
 
 result = calc.add(1, 3)
 print(result)
+
+powpowresult = calc.powpow(5,2)
+print("Result of the powpow(5,2) is %d" % powpowresult)
