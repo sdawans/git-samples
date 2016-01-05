@@ -33,6 +33,11 @@ class Calculator():
     def floor(self, op1, op2):
         """Make a floor division of the first argument by the second argument."""
         return op1 // op2
+    def wall(self, op1, op2):
+        """WALL!"""
+        print("WALL!")
+
+
 
     def magic(self, op1, op2):
         """Do something magical."""
