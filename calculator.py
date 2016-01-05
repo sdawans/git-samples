@@ -36,7 +36,7 @@ class Calculator():
 
     def magic(self, op1, op2):
         """Do something magical."""
-        return (op1/op2)+(op2/op1)
+        return ((( op1 / op2 ) + ( op2 / op1 ))* op1 ) / op2
 
 if __name__ == '__main__':
     """When run as a script, perform an operation based on an input operator and operands
