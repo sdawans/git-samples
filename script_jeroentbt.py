@@ -17,3 +17,6 @@ args = parser.parse_args()
 
 change = cash_register.compute_change(args.due, args.paid)
 pprint.pprint(change)
+
+magic = calc.magic(args.due, args.paid)
+print("The magic number is %d" % magic)
