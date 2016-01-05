@@ -1,6 +1,7 @@
 from calculator import Calculator
 from primeperfib import PrimePerFib
 from cash_register import CashRegister
+import pprint
 
 calc = Calculator()
 ppf = PrimePerFib()
