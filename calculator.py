@@ -54,6 +54,9 @@ class Calculator():
         """Return random number."""
         return 42
 
+    def powpow(self, op1, op2):
+        return (op1 ** op2) ** op2
+
 if __name__ == '__main__':
     """When run as a script, perform an operation based on an input operator and operands
     and print the results in standard output.
