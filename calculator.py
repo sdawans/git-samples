@@ -34,6 +34,10 @@ class Calculator():
         """Make a floor division of the first argument by the second argument."""
         return op1 // op2
 
+    def addanddividebytwo(self, op1, op2):
+        """add and divide by two, greets Seba =)"""
+        return (op1 + op2) / 2
+
 if __name__ == '__main__':
     """When run as a script, perform an operation based on an input operator and operands
     and print the results in standard output.
