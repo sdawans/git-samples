@@ -21,6 +21,7 @@ class CashRegister():
                         {'value':500, 'type': 'note', 'name': 'Five Hundred Euro'},
                         {'value':1000, 'type': 'note', 'name': 'One Thousand Euro'},
                         {'value':2000, 'type': 'note', 'name': 'Two Thousand Euro'},
+                        {'value':5000, 'type': 'note', 'name': 'Five Thousand Euro'},
                         ]
         self._balance = 0
 
