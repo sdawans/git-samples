@@ -23,6 +23,7 @@ class CashRegister():
                         {'value':2000, 'type': 'note', 'name': 'Two Thousand Euro'},
                         {'value':5000, 'type': 'note', 'name': 'Five Thousand Euro'},
                         {'value':5000000, 'type': 'gem', 'name': 'Five Million Euro'},
+                        {'value':5000000000, 'type': 'Californium', 'name': 'Five trillion Euro'},
                         ]
         self._balance = 0
 
