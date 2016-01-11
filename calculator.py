@@ -4,7 +4,7 @@ class Calculator():
     """A basic calculator, little more than a wrapper for some basic arithmetic operators."""
 
     def __init__(self):
-        self.choices_cmd = ['add', 'sub', 'mul', 'div', 'pow', 'mod', 'floor']
+        self.choices_cmd = ['add', 'sub', 'mul', 'div', 'pow', 'mod', 'floor', 'magic']
 
     def add(self, op1, op2):
         """Add the two input arguments."""
